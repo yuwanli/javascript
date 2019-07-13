@@ -3,11 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        #container{
+            height: 200px;
+            width: 100%;
+            line-height: 200px;
+            font-size: 36px;
+            text-align: center;
+            background-color: #333;
+            color: #fff;
+        }
+    </style>
 </head>
 <body>
+    <div id="container">0</div>
+    <button id="button">cancel</button>
 <script>
-    var p = document.createElement('p')
-    p.innerHTML =
+    const debounce = (fn, delay, immediate) => {
+        let timer,result;
+        const resFn = function(...args) {
+            const _this = this
+            timer && clearTimeout(timer);
+            if (immediate){
+                const canRun = !timer
+                timer = setTimeout(() => {
+                    timer = null
+                },delay)
+                if (canRun){
+                    result = fn.apply(_this, args)
+                }
+            } else {
+                timer = setTimeout(() => {
+                    fn.apply(_this, args)
+                },delay)
+            }
+            return result
+        }
+
+        resFn.cancel = () => {
+            clearTimeout(timer)
+            timer = null
+        }
+
+        return resFn
+    }
+
+    var count = 1;
+    var container = document.getElementById('container');
+    var button = document.getElementById('button');
+
+    function getUserAction(a,b) {
+        container.innerHTML = count++;
+    };
+
+    const debounceFn = debounce(getUserAction, 10000, true);
+
+    container.onmousemove = debounceFn;
+    button.addEventListener('click', function(){
+        debounceFn.cancel();
+    })
 </script>
 </body>
 </html>
