@@ -27,6 +27,6 @@ const debounce = (fn, delay, immediate) => {
     return resFn
 }
 
-export default {
+export {
     debounce
 }
