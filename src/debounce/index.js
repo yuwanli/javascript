@@ -4,7 +4,7 @@ var count = 1;
 var container = document.getElementById('container');
 var button = document.getElementById('button');
 
-function getUserAction(a,b) {
+function getUserAction() {
     container.innerHTML = count++;
 };
 

@@ -27,6 +27,18 @@ const debounce = (fn, delay, immediate) => {
     return resFn
 }
 
+const throttle = (fn, delay, mustRun) => {
+    let time = Date.now();
+    return function(...args) {
+        const _this = this
+        if (Date.now() - time >= delay){
+            fn.apply(_this,args)
+            time = Date.now()
+        }
+    }
+}
+
 export {
-    debounce
+    debounce,
+    throttle
 }
