@@ -27,15 +27,44 @@ const debounce = (fn, delay, immediate) => {
     return resFn
 }
 
+// const throttle = (fn, delay, mustRun) => {
+//     let time = Date.now();
+//     return function(...args) {
+//         const _this = this
+//         if (Date.now() - time >= delay){
+//             fn.apply(_this,args)
+//             time = Date.now()
+//         }
+//     }
+// }
+
 const throttle = (fn, delay, mustRun) => {
-    let time = Date.now();
-    return function(...args) {
-        const _this = this
-        if (Date.now() - time >= delay){
-            fn.apply(_this,args)
-            time = Date.now()
+    var timeout, context, args, result;
+    var previous = 0;
+
+    var later = function() {
+        previous = +new Date();
+        timeout = null;
+        fn.apply(context, args)
+    };
+
+    var throttled = function() {
+        var now = +new Date();
+        var remaining = delay - (now - previous);
+        context = this;
+        args = arguments;
+        if (remaining <= 0 || remaining > delay) {
+            if (timeout) {
+                clearTimeout(timeout);
+                timeout = null;
+            }
+            previous = now;
+            fn.apply(context, args);
+        } else if (!timeout) {
+            timeout = setTimeout(later, remaining);
         }
-    }
+    };
+    return throttled;
 }
 
 export {
