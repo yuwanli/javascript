@@ -67,7 +67,33 @@ const throttle = (fn, delay, mustRun) => {
     return throttled;
 }
 
+const isArray = (val) => {
+    if (!val){return false}
+    return Object.prototype.toString.call(val) === '[object Array]'
+}
+
+const isObject = (val) => {
+    if (!val){return false}
+    return Object.prototype.toString.call(val) === '[object Object]'
+}
+const extend = (resObj, sourceObj) => {
+    // console.log(args)
+    // const resObj = args[0]
+    for (let i in sourceObj){
+        const currentVal = sourceObj[i]
+        if (isArray(currentVal)){
+            resObj[i] = extend(resObj[i]||[],currentVal)
+        } else if(isObject(currentVal)) {
+            resObj[i] = extend(resObj[i]||{},currentVal)
+        } else {
+            resObj[i] = currentVal
+        }
+    }
+    return resObj
+}
+
 export {
     debounce,
-    throttle
+    throttle,
+    extend
 }
