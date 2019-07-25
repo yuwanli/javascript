@@ -21,7 +21,7 @@ const fn = async () => {
 };
 
 fn().then((v) => console.log(v));
-
+console.log
 
 let a = 5;
 const b = 10;
