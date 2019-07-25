@@ -1,0 +1,61 @@
+Arguments: 
+  /usr/local/bin/node /usr/local/bin/yarn install
+
+PATH: 
+  /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+
+Yarn version: 
+  1.16.0
+
+Node version: 
+  10.16.0
+
+Platform: 
+  darwin x64
+
+Trace: 
+  Error: getaddrinfo ENOTFOUND registry.npm.taobao.org registry.npm.taobao.org:80
+      at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:56:26)
+
+npm manifest: 
+  {
+    "name": "javascript",
+    "version": "1.0.0",
+    "description": "javascript =================================",
+    "main": "webpack.config.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1",
+      "dev": "webpack-dev-server",
+      "build": "webpack"
+    },
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/yuwanli/javascript.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+      "url": "https://github.com/yuwanli/javascript/issues"
+    },
+    "homepage": "https://github.com/yuwanli/javascript#readme",
+    "dependencies": {
+      "@babel/preset-env": "^7.5.5",
+      "babel-loader": "^7.0.6"
+    },
+    "devDependencies": {
+      "@babel/cli": "^7.5.5",
+      "@babel/core": "^7.5.5",
+      "@babel/plugin-transform-runtime": "^7.5.5",
+      "clean-webpack-plugin": "^3.0.0",
+      "html-webpack-plugin": "^3.2.0",
+      "webpack": "^3.4.1",
+      "webpack-cli": "^2.1.4",
+      "webpack-dev-server": "^2.9.7"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

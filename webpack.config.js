@@ -18,7 +18,7 @@ let getEntry = (globPath, pathDir) => {
     return entries;
 };
 
-const entries = getEntry('src/**/index.js','src/');
+const entries = getEntry('src/**/index.ts','src/');
 const htmls = Object.keys(entries).reduce((resArr,val) => {
     resArr.push(new HtmlWebpackPlugin({
         template: `./src/${val}/index.html`,
@@ -39,6 +39,18 @@ module.exports = {
         new CleanWebpackPlugin(),
         ...htmls
     ],
+    module: {
+        rules: [
+            {
+                test: /\.(js|ts)$/,
+                use: [{
+                    loader: 'babel-loader'
+                }],
+                exclude: /node_modules/,
+            },
+            
+        ]
+    },
     devServer: {
         contentBase: './dist/',
         host: 'localhost',      
