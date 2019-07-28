@@ -36,3 +36,16 @@ console.log('1', a) // -> '1' 1
 
 
 ### Promise 构造函数是同步执行还是异步执行，那么 then 方法呢？
+
+### HTTP/2.0 相比1.0有哪些重大改进？
+[HTTP/2.0 相比1.0有哪些重大改进？](https://www.zhihu.com/question/34074946/answer/75364178)
+
+### 谈谈你对 TCP 三次握手和四次挥手的理解
+[作为前端的你了解多少tcp的内容](https://juejin.im/post/5c078058f265da611c26c235)
+
+### React 中 setState 什么时候是同步的，什么时候是异步的？
+[深入 setState 机制](https://github.com/sisterAn/blog/issues/26)
+
+### npm install的实现原理
+[npm install的实现原理？](https://www.zhihu.com/question/66629910)
+[npm 模块安装机制简介](http://www.ruanyifeng.com/blog/2016/01/npm-install.html)
