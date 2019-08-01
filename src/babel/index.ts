@@ -1,38 +1,94 @@
-// const test = () => {
-//     return new Promise((resolve) => {
-//         setTimeout(()=> {
-//             resolve('asd')
-//         },1000)
-//     })
-// }
-// test().then(res => {
-//     console.log(res)
-// })
-
-const pro = new Promise((resolve) => {
-    setTimeout(() => {
-        resolve('1111');
-    }, 1000);
-});
-const fn = async () => {
-    const res = await pro;
-    console.log('asdasdas');
-    console.log(res);
-};
-
-fn().then((v) => console.log(v));
-console.log
-
-let a = 5;
-const b = 10;
-let input = [1,2,3];
-input.map(item => item+1);
-
-
-function greeter(person: string) {
-    return "Hello, " + person;
+function* test() {
+    const res1 = yield 1;
+    const res2 = yield res1 + 1;
+    const res3 = yield res2 + 1;
+    const res4 = yield res3 + 1;
+    const res5 = yield res4 + 1;
+    yield res5 + 1;
 }
 
-let user = "Jane User";
+const tt = test()
+const button = document.getElementById('button')
+const input = document.getElementById('input')
+let before = null
+button.addEventListener('click', () => {
+    const inputValue = input.value
+    before = tt.next(+inputValue || before).value
+    input.value = ''
+    console.log(before)
+})
 
-document.body.innerHTML = greeter(user);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// function* test() {
+//     const res1 = yield 1;
+//     const res2 = yield res1 + 1;
+//     const res3 = yield res2 + 1;
+//     const res4 = yield res3 + 1;
+//     const res5 = yield res4 + 1;
+//     yield res5 + 1;
+// }
+
+// const tt = test()
+// const button = document.getElementById('button')
+// const input = document.getElementById('input')
+// let before = null
+// button.addEventListener('click', () => {
+//     const inputValue = input.value
+//     before = tt.next(+inputValue || before).value
+//     input.value = ''
+//     console.log(before)
+// })
