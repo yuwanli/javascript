@@ -163,3 +163,34 @@ for (var i = 0; i< 10; i++){
 ### Virtual DOM VS 操作原生 DOM
 
 [网上都说操作真实 DOM 慢，但测试结果却比 React 更快，为什么](https://www.zhihu.com/question/31809713/answer/53544875)
+
+### 浏览器缓存原理
+
+[彻底搞懂浏览器缓存](https://www.jianshu.com/p/1d1d8a14a76c)
+[深入理解浏览器的缓存机制](https://www.jianshu.com/p/54cc04190252)
+
+### 使用迭代的方式实现 flatten 函数
+
+```js
+let arr = [1, 2, [3, 4, 5, [6, 7], 8], 9, 10, [11, [12, 13]]]
+
+const flatten = function (arr) {
+    while (arr.some(item => Array.isArray(item))) {
+        arr = [].concat(...arr)
+    }
+    return arr
+}
+
+console.log(flatten(arr))
+```
+
+```js
+const flatten = array => 
+  array.reduce((acc, cur) => 
+    (
+      Array.isArray(cur) ? [...acc, ...flatten(cur)] : [...acc, cur]
+    ), [])
+```
+
+### 在 Vue 中，子组件为何不可以修改父组件传递的 Prop
+[在 Vue 中，子组件为何不可以修改父组件传递的 Prop](https://github.com/chaijinsong/blog/issues/15)
