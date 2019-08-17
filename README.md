@@ -194,3 +194,26 @@ const flatten = array =>
 
 ### 在 Vue 中，子组件为何不可以修改父组件传递的 Prop
 [在 Vue 中，子组件为何不可以修改父组件传递的 Prop](https://github.com/chaijinsong/blog/issues/15)
+
+
+### HTTPS 握手过程中，客户端如何验证证书的合法性
+[HTTPs入门, 图解SSL从回车到握手](https://zhuanlan.zhihu.com/p/25587986)
+
+### 输出以下代码的执行结果并解释为什么
+```js
+var a = {n: 1};
+var b = a;
+a.x = a = {n: 2};
+
+console.log(a.x) 	
+console.log(b.x)
+```
+
+```js
+undefined
+{n: 2}
+```
+[javascript面试题，关于连续赋值的坑？](https://www.zhihu.com/question/41220520)
+
+### 前端算法
+[无算法，不前端 前端面试中常见的数据结构与算法汇总](https://blog.csdn.net/wjd36068407/article/details/82855802)
