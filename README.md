@@ -232,3 +232,27 @@ undefined
 - 不可以使用 arguments 对象，该对象在函数体内不存在。
 - 不可以使用 yield 命令，因此箭头函数不能用作 Generator 函数。
 - 不可以使用 new 命令，因为：1.没有自己的 this，无法调用 call，apply 2. 没有 prototype 属性
+
+### [2, 10, 3, 4, 5, 11, 10, 11, 20] 输出 [[2, 3, 4, 5], [10, 11], [20]]
+
+```js
+function selfDefinetSort(arr) {
+    const res = []
+    let tagIndex = 0;// 游标
+    arr.sort((a,b) => a - b); //先排序
+
+    while(tagIndex < arr.length){
+        const current = arr[tagIndex]
+        const start = (parseInt(current/10))*10
+        const end = (parseInt(current/10) + 1)*10
+        const valid = arr.filter((val) => {
+            return val >= start && val < end
+        })
+        tagIndex += valid.length
+        res.push(valid)
+    }
+    return res
+}
+
+selfDefinetSort([2, 10, 3, 4, 5, 11, 10, 11, 20])
+```
