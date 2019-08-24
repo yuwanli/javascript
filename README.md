@@ -256,3 +256,7 @@ function selfDefinetSort(arr) {
 
 selfDefinetSort([2, 10, 3, 4, 5, 11, 10, 11, 20])
 ```
+
+### v-model 的原理
+
+[v-model 原理](./vModel.md)
