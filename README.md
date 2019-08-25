@@ -260,3 +260,16 @@ selfDefinetSort([2, 10, 3, 4, 5, 11, 10, 11, 20])
 ### v-model 的原理
 
 [v-model 原理](./vModel.md)
+
+### em+rem
+
+- em 是继承父元素的字体大小
+- rem 可以根据根节点的字体大小整体调整
+
+### lazyLoad 原理
+
+`IntersectionObserver`
+
+[Vue-lazyload原理详解之源码解析](https://blog.csdn.net/babyxue/article/details/82986160)
+[vue-lazyload源码分析](https://blog.csdn.net/weixin_33825683/article/details/91647218)
+[谈谈IntersectionObserver懒加载](https://www.jianshu.com/p/84a86e41eb2b)
