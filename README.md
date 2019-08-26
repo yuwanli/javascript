@@ -273,3 +273,23 @@ selfDefinetSort([2, 10, 3, 4, 5, 11, 10, 11, 20])
 [Vue-lazyload原理详解之源码解析](https://blog.csdn.net/babyxue/article/details/82986160)
 [vue-lazyload源码分析](https://blog.csdn.net/weixin_33825683/article/details/91647218)
 [谈谈IntersectionObserver懒加载](https://www.jianshu.com/p/84a86e41eb2b)
+
+
+### webpack的plugin编写
+
+
+### 性能优化
+
+- 常态页面的请求内容缓存在storage，下次打开预先请求缓存
+- transform 动画代替left、right动画
+- 服务端渲染
+- 字体图标代替小图片
+- 图片大小的优化（tinypng）
+
+[前端性能优化](https://www.cnblogs.com/yangzhou33/p/9944106.html)
+
+### 性能监控
+
+- 利用的是 `window.performance` 下的 `timing` 提供的多个有效的时间信息
+- 对于计算首屏加载，是监听 `window` 的 `load` 事件
+- 对于接口的性能监控，是监听 `window` 的 `ajaxComplete` 事件
