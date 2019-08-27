@@ -290,6 +290,49 @@ selfDefinetSort([2, 10, 3, 4, 5, 11, 10, 11, 20])
 
 ### 性能监控
 
+检测工具
+- WebPagetest 
+
+浏览器加载的过程抽象成4个
+- 白屏时间（首次看到内容的时间）- 首尾标记一个时间戳
+
+- 首屏时间 - `window.performance.getEntriesByType('paint')` 可以获取到相关的时间信息
+
+- 用户可操作（domready即可操作）
+
+- 总下载时间 - onload
+
+
 - 利用的是 `window.performance` 下的 `timing` 提供的多个有效的时间信息
 - 对于计算首屏加载，是监听 `window` 的 `load` 事件
 - 对于接口的性能监控，是监听 `window` 的 `ajaxComplete` 事件
+
+### 异常监控
+
+1. 编译时的异常
+- eslint 检查工具
+- ts 、flow 等静态类型检查
+
+2. 运行时的错误
+- 重写 `window.onerror` 的方法
+- 重写 `window.onunhandledrejection` 方法，处理没有写`reject`捕获方法的`promise`
+
+
+### 页面加载进度条 （Pace.js）
+
+整体进度分成4个部分组成：
+
+1.document
+- 监听`document`的`onreadystatechange`事件
+- `document.readyState` 状态有 `loading`、`interactive`、`complete` 分别对应0%、50%、100%
+
+2.elements
+- 通过 `document.querySelector(this.selector)` 选择器选择配置的选择器列表
+- 全部成功（默认是`body`）则表示该项完成
+
+3.eventLag
+- 匀速的更新进度，优化体验，避免‘卡住’的情况
+
+4.ajax
+- 代理模式，重写了 `XMLHttpRequest`、`XDomainRequest`、`WebSocket` 方法
+- 即可监听 `progress，load，error` 方法
