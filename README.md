@@ -53,6 +53,7 @@ console.log('1', a) // -> '1' 1
 
 ### npm install的实现原理
 [npm install的实现原理？](https://www.zhihu.com/question/66629910)
+
 [npm 模块安装机制简介](http://www.ruanyifeng.com/blog/2016/01/npm-install.html)
 
 ### 有以下 3 个判断数组的方法，请分别介绍它们之间的区别和优劣
@@ -167,6 +168,7 @@ for (var i = 0; i< 10; i++){
 ### 浏览器缓存原理
 
 [彻底搞懂浏览器缓存](https://www.jianshu.com/p/1d1d8a14a76c)
+
 [深入理解浏览器的缓存机制](https://www.jianshu.com/p/54cc04190252)
 
 ### 使用迭代的方式实现 flatten 函数
@@ -216,6 +218,7 @@ undefined
 [javascript面试题，关于连续赋值的坑？](https://www.zhihu.com/question/41220520)
 
 ### 前端算法
+
 [无算法，不前端 前端面试中常见的数据结构与算法汇总](https://blog.csdn.net/wjd36068407/article/details/82855802)
 
 ### 性能优化
@@ -271,7 +274,9 @@ selfDefinetSort([2, 10, 3, 4, 5, 11, 10, 11, 20])
 `IntersectionObserver`
 
 [Vue-lazyload原理详解之源码解析](https://blog.csdn.net/babyxue/article/details/82986160)
+
 [vue-lazyload源码分析](https://blog.csdn.net/weixin_33825683/article/details/91647218)
+
 [谈谈IntersectionObserver懒加载](https://www.jianshu.com/p/84a86e41eb2b)
 
 
@@ -336,3 +341,23 @@ selfDefinetSort([2, 10, 3, 4, 5, 11, 10, 11, 20])
 4.ajax
 - 代理模式，重写了 `XMLHttpRequest`、`XDomainRequest`、`WebSocket` 方法
 - 即可监听 `progress，load，error` 方法
+
+### h5适配
+[使用Flexible实现手淘H5页面的终端适配](https://github.com/amfe/article/issues/17)
+
+
+### webpack 热更新的原理
+
+`hot-module-replacement-plugin` 和 `webpack-dev-server`
+
+- webpack-dev-server(WDS)的功能提供 bundle server的能力，就是生成的 bundle.js 文件可以通过 localhost://xxx 的方式去访问，另外 WDS 也提供 livereload(浏览器的自动刷新)
+
+- hot-module-replacement-plugin 的作用是提供 HMR 的 runtime，并且将 runtime 注入到 bundle.js 代码里面去。一旦磁盘里面的文件修改，那么 HMR server 会将有修改的 js module 信息发送给 HMR runtime，然后 HMR runtime 去局部更新页面的代码。因此这种方式可以不用刷新浏览器
+
+[Webpack HMR 原理解析](https://zhuanlan.zhihu.com/p/30669007)
+
+### KMP 算法
+
+[KMP ppt](https://note.youdao.com/ynoteshare1/index.html?id=91749237e787b4aa0b246336ea0c1137&type=note)
+
+[KMP算法详解-彻底清楚了](https://www.cnblogs.com/dusf/p/kmp.html)
