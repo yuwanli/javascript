@@ -345,6 +345,8 @@ selfDefinetSort([2, 10, 3, 4, 5, 11, 10, 11, 20])
 ### h5适配
 [使用Flexible实现手淘H5页面的终端适配](https://github.com/amfe/article/issues/17)
 
+[移动端H5页面高清多屏适配方案](https://www.cnblogs.com/ranyonsue/p/6795943.html)
+
 
 ### webpack 热更新的原理
 
@@ -361,3 +363,23 @@ selfDefinetSort([2, 10, 3, 4, 5, 11, 10, 11, 20])
 [KMP ppt](https://note.youdao.com/ynoteshare1/index.html?id=91749237e787b4aa0b246336ea0c1137&type=note)
 
 [KMP算法详解-彻底清楚了](https://www.cnblogs.com/dusf/p/kmp.html)
+
+### 关于 == 和 ===
+
+需注意
+- NaN 不等于 NaN
+- +0 等于 -0
+
+== 发生的类型转换
+- 字符串和数字进行比较
+则把字符串转换成数字进行比较
+
+- 布尔值与其他类型进行比较
+会把布尔值转换成数值然后在进行比较
+
+- null 和 undefined
+除下列情况外，其他值都不跟null和undefined相等
+`null == undefined //true`
+
+- 对象和非对象间的比较
+对对象进行toPrimitive的操作（toString() valueOf()）
