@@ -18,7 +18,7 @@ let getEntry = (globPath, pathDir) => {
     return entries;
 };
 
-const entries = getEntry('src/**/index.ts','src/');
+const entries = getEntry('src/**/index.js','src/');
 const htmls = Object.keys(entries).reduce((resArr,val) => {
     resArr.push(new HtmlWebpackPlugin({
         template: `./src/${val}/index.html`,
