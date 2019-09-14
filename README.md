@@ -42,6 +42,37 @@ if (true) {
 }
 ```
 
+### 分析下面代码，并解释下原因
+```js
+var a = 1
+function test() {
+	console.log(a)
+	var a = 2
+	console.log(a)
+}
+test()
+console.log(a)
+
+// undefined
+// 2
+// 1
+```
+
+```js 
+var a = 1
+function test() {
+	console.log(a)
+	a = 2
+	console.log(a)
+}
+test()
+console.log(a)
+
+// 1
+// 2 
+// 2
+```
+
 
 ### JS 异步解决方案的发展历程以及优缺点
 
