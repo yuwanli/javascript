@@ -7,6 +7,41 @@ npm run dev
 http://localhost:3000/debounce/index.html
 ```
 
+### 分析下面代码，并解释下原因
+```js
+var a = 2;
+var a = 3;
+console.log(a)
+```
+
+```js 
+let a = 2;
+let a = 3;
+console.log(a)
+```
+
+答案：
+```js
+//3
+//Identifier 'a' has already been declared
+```
+
+var 与 let 的相同点在于都是变量的声明，区别有：
+- let 声明的变量只能在当前代码块中有效
+- let 不存在变量提升
+- let 会形成‘暂时性死区’，声明的变量绑定这个区域
+- let 可形成块级作用域
+
+```js
+var tmp = 123;
+
+if (true) {
+  // 形成暂时性死区，在声明前进行赋值会报错
+  tmp = 'abc'; // ReferenceError
+  let tmp;
+}
+```
+
 
 ### JS 异步解决方案的发展历程以及优缺点
 
