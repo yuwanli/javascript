@@ -449,3 +449,22 @@ selfDefinetSort([2, 10, 3, 4, 5, 11, 10, 11, 20])
 
 - 对象和非对象间的比较
 对对象进行toPrimitive的操作（toString() valueOf()）
+
+### css margin的折叠问题
+
+[浅析让人D疼的margin折叠](https://www.jianshu.com/p/a1beddd81156)
+
+### 观察者模式
+
+### formData和原生的ajax有什么区别,介绍下表单提交，和formData有什么关系
+
+### HTTP和HTTPS的区别
+
+- https需要证书
+- http 超文本传输协议 明文传输 https 是ssl加密的传输协议
+- 连接的端口不一样，一个80 一个443
+
+### js的垃圾回收机制
+
+
+
