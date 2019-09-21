@@ -466,5 +466,17 @@ selfDefinetSort([2, 10, 3, 4, 5, 11, 10, 11, 20])
 
 ### js的垃圾回收机制
 
+### webpack 动态引入 code split
+
+```js
+import page1 from '@/page/page1'
+```
+
+改成
+
+```js
+const page1 = () => import('@/page/page1')
+```
+
 
 
