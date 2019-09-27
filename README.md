@@ -478,5 +478,40 @@ import page1 from '@/page/page1'
 const page1 = () => import('@/page/page1')
 ```
 
+### webpack 热更新 HMR 原理解析
 
+[Webpack HMR 原理解析](https://zhuanlan.zhihu.com/p/30669007)
 
+### typeof 妙用
+
+```js
+var a;
+
+typeof a;// undefined
+typeof b;// undefined
+
+```
+
+```js
+// 这么使用有危险 未定义的情况下会报错
+if (DEBUG){
+  console.log('Debugging is staring')
+}
+
+// 这样就排查了 undefined 和 null的情况
+if (typeof DEBUG !== 'undefined'){
+  console.log('Debugging is staring')
+}
+```
+
+### 如何在 H5 和小程序项目中计算白屏时间和首屏时间，说说你的思路
+
+[Web 性能优化-首屏和白屏时间](https://lz5z.com/Web%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96-%E9%A6%96%E5%B1%8F%E5%92%8C%E7%99%BD%E5%B1%8F%E6%97%B6%E9%97%B4/)
+
+### 饿了么，骨架图的实现原理
+
+[page-skeleton-webpack-plugin](https://github.com/ElemeFE/page-skeleton-webpack-plugin)
+
+原理分析：
+
+[一种自动化生成骨架屏的方案](https://github.com/Jocs/jocs.github.io/issues/22)
