@@ -164,6 +164,8 @@ Array.isArray()
 
 ### 如何防止 XSS 和 CSRF 攻击
 
+[安全测试===8大前端安全问题](https://www.cnblogs.com/botoo/p/8182236.html)
+
 #### XSS: 跨站点脚本攻击
 - 不使用innerHTML 使用innerText
 - 或转义innerHTML
